@@ -15,8 +15,9 @@
         "default": false
     },
     "isAvailable": {
-        "type": "Number",
-        "default": 0
+        "type": "boolean",
+        "required": false,
+        "default": false
     }
     },
     "validations": [],

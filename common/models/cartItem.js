@@ -54,17 +54,19 @@ module.exports = function (CartItem) {
             cart.totalSum += oldCartItem.totalSum;
             await oldCartItem.save();
             await cart.save();
-         }  else {
-             let totalSum = product.price * quantity;
-             await CartItem.create({
-                 productId: productId,
-                 cartId: cartId,
-                 quantity: quantity,
-                 totalSum: totalSum
-             })
-             cart.totalSum += totalSum
-         }
-      
+            return `Item ${product.name} has been added to the cart quantity: ${oldCartItem.quantity}, totalSum: ${oldCartItem.totalSum}`
+        } else {
+            let totalSum = product.price * quantity;
+            await CartItem.create({
+                productId: productId,
+                cartId: cartId,
+                quantity: quantity,
+                totalSum: totalSum
+            })
+            cart.totalSum += totalSum
+            return `Item ${product.name} has been added to the cart quantity: ${quantity}, totalSum: ${totalSum}`
+        }
+
     }
 
     CartItem.remoteMethod('createCartItemOrChangeCurrent', {

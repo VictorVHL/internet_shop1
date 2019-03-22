@@ -12,7 +12,8 @@
     },
     "price": {
         "type": "Number",
-        "default": false
+        "required": false,
+        "default": 0
     },
     "isAvailable": {
         "type": "boolean",

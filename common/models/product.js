@@ -18,8 +18,8 @@ module.exports = function (Product) {
                 value.totalSum =  value.quantity * ctx.instance.price;
                 cart.totalSum += value.totalSum;
                 await value.save();
-                await cart.save(); 
-            } 
+                await cart.save();
+            }
         }
     })
 }

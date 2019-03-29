@@ -2,7 +2,7 @@
 module.exports = function (CartItem) {
 
     CartItem.observe('before save', async (ctx, next) => {
-        if (ctx.instance) {
+        if (ctx.instance.cartId) {
             const Cart = CartItem.app.models.Cart;
             const Product = CartItem.app.models.Product;
             const product = await Product.findById(ctx.instance.productId);
@@ -55,7 +55,7 @@ module.exports = function (CartItem) {
             await oldCartItem.save();
             await cart.save();
             return `Item ${product.name} has been added to the cart quantity: ${oldCartItem.quantity}, totalSum: ${oldCartItem.totalSum}`
-        } else {
+        } else if (product.isAvailable === true) {
             let totalSum = product.price * quantity;
             await CartItem.create({
                 productId: productId,
@@ -65,7 +65,9 @@ module.exports = function (CartItem) {
             })
             cart.totalSum += totalSum
             return `Item ${product.name} has been added to the cart quantity: ${quantity}, totalSum: ${totalSum}`
-        }
+        } else {
+            return `There are currently no ${product.name}`;
+          }
 
     }
 

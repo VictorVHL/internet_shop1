@@ -1,3 +1,30 @@
 {
-  "extends": "loopback"
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "env": {
+    "node": true
+},
+  "extends": "loopback",
+  "rules": {
+    "quotes":["warn", "single", { "allowTemplateLiterals": true }],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "max-len": ["warn", { "code": 120 }],
+    "no-magic-numbers": ["error", { "ignore": [1,0,-1], "ignoreArrayIndexes": true }],
+    "no-multi-spaces": ["error"],
+    "no-const-assign": "error",
+    "comma-dangle": "off",
+    "comma-spacing": ["warn", {"before": false, "after": true}],
+    "computed-property-spacing": ["warn", "never"],
+    "space-before-function-paren": ["error", "always"],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "object-curly-spacing":["error", "always"],
+    "keyword-spacing":["error", { "before": true, "after": true }],
+    "no-mixed-spaces-and-tabs":["error", "smart-tabs"],
+    "no-trailing-spaces":"error",
+    "arrow-spacing":["error", { "before": true, "after": true }],
+    "eol-last": ["error", "never"],
+    "newline-after-var": ["error", "always"]
+  }
 }

@@ -8,5 +8,21 @@
   "name": "db",
   "user": "",
   "connector": "mongodb"
+},
+"emailDs": {
+  "name": "emailDs",
+  "connector": "mail",
+  "transports": [
+    {
+      "type": "smtp",
+      "host": "smtp.gmail.com",
+      "secure": true,
+      "port": 465,
+      "auth": {
+        "user": "example@gmail.com",
+        "pass": "examplePassword"
+      }
+    }
+  ]
 }
 }

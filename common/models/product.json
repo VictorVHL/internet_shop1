@@ -17,8 +17,7 @@
     },
     "isAvailable": {
         "type": "boolean",
-        "required": false,
-        "default": false
+        "required": true
     }
     },
     "validations": [],

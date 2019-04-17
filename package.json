@@ -20,6 +20,7 @@
     "loopback-component-explorer": "^6.2.0",
     "loopback-connector-mongodb": "^3.9.2",
     "nodejs-currency-converter": "^1.0.2",
+    "request-promise-native": "^1.0.7",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },

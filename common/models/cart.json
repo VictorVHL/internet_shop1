@@ -1,6 +1,6 @@
 {
     "name": "Cart",
-    "base": "PersistedModel",
+    "base": "CurrencyConversion",
     "idInjection": true,
     "options": {
       "validateUpsert": true

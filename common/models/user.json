@@ -18,6 +18,14 @@
       },
       "validations": [],
       "relations": {
+        "cart": {
+          "type": "belongsTo",
+          "model": "Cart"
+        },
+        "orders": {
+          "type": "hasMany",
+          "model": "Order"
+        }
       },
       "acls": [],
       "methods": {}
